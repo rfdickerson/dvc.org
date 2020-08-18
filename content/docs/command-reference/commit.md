@@ -18,8 +18,8 @@ positional arguments:
 
 ## Description
 
-The `dvc commit` command is useful for several scenarios, when data already
-tracked by DVC changes: when a [stage](/doc/command-reference/run) or
+`dvc commit` is useful for several scenarios, when data already tracked by DVC
+changes: when a [stage](/doc/command-reference/run) or
 [pipeline](/doc/command-reference/dag) is in development/experimentation; when
 manually editing or generating DVC <abbr>outputs</abbr>; or to force DVC-file
 updates without reproducing stages or pipelines. These scenarios are further
@@ -66,10 +66,13 @@ computed and added to the DVC-file, but the actual data file is not saved in the
 cache. This is where the `dvc commit` command comes into play. It performs that
 last step (saving the data in cache).
 
-Note that it's best to avoid the last two scenarios. They essentially
+Keep in ming that it's best to avoid the last two scenarios. They essentially
 force-update the [DVC-files](/doc/user-guide/dvc-files-and-directories) and save
 data to cache. They are still useful, but keep in mind that DVC can't guarantee
 reproducibility in those cases.
+
+> Note that committing data does not affect code, `dvc.yaml`, or `.dvc` files.
+> Those should be saved with `git commit`.
 
 ## Options
 
